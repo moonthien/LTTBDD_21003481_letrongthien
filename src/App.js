@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+
+
+
+  const [number , setNumber] =  useState(1)
+  const arrayNumber = []
+
+  const xuatTu1Toi10 = () => {
+    for (let i = 0; i <= 10; i++) {
+      arrayNumber.push(i)
+    }
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      {xuatTu1Toi10}
+      <div style={{}}>
+        {arrayNumber.map(currenntValue => {
+          console.log(currenntValue)
+          return <p>{currenntValue}</p>
+        })}
+      </div>
+      
     </div>
   );
 }
